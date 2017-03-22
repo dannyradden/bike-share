@@ -68,57 +68,16 @@ class Trip < ActiveRecord::Base
     Trip.trip_quantities.min_by {|key, value| value}.first
   end
 
-  # LAUREN WILL REFACTOR THE BELOW DISGUSTINGNESS :D
-
-  def self.total_rides_per_month
-    ride_months = Trip.all.reduce(Hash.new(0)) do |hash, trip|
-      hash[trip.start_date.month] = Hash.new(0)
-      hash
-    end
-
-    Trip.all.each do |trip|
-      ride_months[trip.start_date.month][trip.start_date.year] +=1
-    end
-
-    ride_months
+  def self.years
+    Trip.pluck(:start_date).map(&:year).uniq.sort
   end
 
-  def self.rides_per_month_prepper
-    Trip.total_rides_per_month.values.map {|h| h.keys }.flatten.uniq.sort
+  def self.year_month_total(year, month)
+    Trip.where('extract(year from start_date) = ? and extract(month from start_date) = ?', year, month).count
   end
 
-  def self.top_table_row
-    years = Trip.rides_per_month_prepper
-    years.reduce("") do |sum, year|
-      sum + "<th>#{year}</th>"
-    end
-  end
-
-  def self.month_rows
-    years = Trip.rides_per_month_prepper
-    month_hash = Trip.total_rides_per_month
-    grand_total_hash = Hash.new(0)
-    sum = ""
-    12.times do |month|
-      sum += ("<tr>" + "<td>" + Trip.month_library[month+1] + "</td>")
-      years.each do |year|
-        thing = month_hash[month+1][year]
-        sum += ("<td>" + "#{thing}" + "</td>")
-        grand_total_hash[year] += thing
-      end
-    end
-    sum += "</tr>"
-    [sum, grand_total_hash]
-  end
-
-  def self.grand_total_rows
-    years = Trip.rides_per_month_prepper
-    grand_total_hash = Trip.month_rows[1]
-    sum = ""
-    years.each do |year|
-      sum += "<td>#{grand_total_hash[year]}</td>"
-    end
-    sum
+  def self.year_sub_totals(year)
+    Trip.where('extract(year from start_date) = ?', year).count
   end
 
   def self.month_library
