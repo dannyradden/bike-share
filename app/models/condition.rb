@@ -21,6 +21,7 @@ class Condition < ActiveRecord::Base
         mean_wind_speed: params[:condition][:mean_wind_speed],
         precipitation: params[:condition][:precipitation]
       )
+      binding.pry
     end
 
     def self.update_condition(params)
