@@ -3,7 +3,7 @@
 <%= will_paginate @conditions %>
 
 <% @conditions.each do |condition| %>
-  <a href="/conditions/<%=condition.id%>"><h4>Condition Date: <%= condition.date.strftime("%B %d, %Y") %></h4></a>
+  <a href="/conditions/<%=condition.id%>"><h4><%= condition.date.strftime("%B %d, %Y") %></h4></a>
   <p>Maximum Temperature: <%= condition.max_temp %>°F</p>
   <p>Minimum Temperature: <%= condition.min_temp %>°F</p>
   <p>Average Temperature: <%= condition.mean_temp %>°F</p>

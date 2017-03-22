@@ -4,10 +4,10 @@
 
 <% @trips.each do |trip| %>
   <a href="/trips/<%=trip.id%>"><h4>Trip ID: <%= trip.id %></h4></a>
-  <p>Duration: <%= trip.duration %></p>
+  <p>Duration: <%= trip.duration/60 %> minutes</p>
   <p>Start Date: <%= trip.start_date.strftime("%A, %B %d, %Y @ %I:%M%P") %></p>
-  <p>Start Station: <%= trip.start_station.name%></p>
   <p>End Date: <%= trip.end_date.strftime("%A, %B %d, %Y @ %I:%M%P") %></p>
+  <p>Start Station: <%= trip.start_station.name%></p>
   <p>End Station: <%= trip.end_station.name%></p>
   <p>Bike ID: <%= trip.bike.bike_number%></p>
   <p>Subscription Type: <%=  trip.subscription_type.subscription_type%></p>
