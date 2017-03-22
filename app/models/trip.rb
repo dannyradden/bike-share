@@ -68,9 +68,8 @@ class Trip < ActiveRecord::Base
     Trip.trip_quantities.min_by {|key, value| value}.first
   end
 
-
   def self.years
-    Trip.pluck(:start_date).map(&:year).uniq
+    Trip.pluck(:start_date).map(&:year).uniq.sort
   end
 
   def self.year_month_total(year, month)

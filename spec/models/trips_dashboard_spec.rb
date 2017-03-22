@@ -46,11 +46,20 @@ RSpec.describe Trip do
   end
 
   describe ".total_rides_per_month" do
-    it "returns total rides for every month" do
-      expect(Trip.total_rides_per_month).to eq({
-                                                8 => {2013 => 2},
-                                                10 => {2014 => 1}
-                                                })
+    it "returns each year" do
+      expect(Trip.years).to eq([2013, 2014])
+    end
+    it "returns total rides for every year month combo" do
+      expect(Trip.year_month_total(2013, 8)).to eq(2)
+      expect(Trip.year_month_total(2014, 10)).to eq(1)
+    end
+    it "returns year subtotals" do
+      expect(Trip.year_sub_totals(2013)).to eq(2)
+      expect(Trip.year_sub_totals(2014)).to eq(1)
+    end
+    it "returns appropriate month string" do
+      expect(Trip.month_library[4]).to eq("April")
+      expect(Trip.month_library[10]).to eq("October")
     end
   end
 
