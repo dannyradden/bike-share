@@ -3,8 +3,8 @@
 <p>Duration: <%= @trip.duration %></p>
 <p>Start Date: <%= @trip.start_date.strftime("%A, %B %d, %Y @ %I:%M%P") %></p>
 <p>End Date: <%= @trip.end_date.strftime("%A, %B %d, %Y @ %I:%M%P") %></p>
-<p>Start Station: <%= if @trip.start_station.nil? ; "Station Doesn't Exist" ; else ; trip.start_station.name ; end %></p>
-<p>End Station: <%= if @trip.end_station.nil? ; "Station Doesn't Exist" ; else ; trip.end_station.name ; end %></p>
+<p>Start Station: <%= if @trip.start_station.nil? ; "Station Doesn't Exist" ; else ; @trip.start_station.name ; end %></p>
+<p>End Station: <%= if @trip.end_station.nil? ; "Station Doesn't Exist" ; else ; @trip.end_station.name ; end %></p>
 <p>Bike Number: <%= @trip.bike.bike_number %></p>
 <p>Subscription Type: <%=  @trip.subscription_type.subscription_type %></p>
 <p>Zip Code: <%= @trip.zip_code.zip_code unless @trip.zip_code.nil?%></p>
