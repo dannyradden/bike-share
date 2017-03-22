@@ -3,12 +3,12 @@
 <%= will_paginate @trips %>
 
 <% @trips.each do |trip| %>
-  <a href="/trips/<%=trip.id%>"><h4>Trip ID: <%= trip.id %></h4></a>
+  <a href="/trips/<%=trip.id%>"><h4>Trip ID: <%= trip.id  %></h4></a>
   <p>Duration: <%= trip.duration/60 %> minutes</p>
   <p>Start Date: <%= trip.start_date.strftime("%A, %B %d, %Y @ %I:%M%P") %></p>
   <p>End Date: <%= trip.end_date.strftime("%A, %B %d, %Y @ %I:%M%P") %></p>
-  <p>Start Station: <%= trip.start_station.name%></p>
-  <p>End Station: <%= trip.end_station.name%></p>
+  <p>Start Station: <%= if trip.start_station.nil? ; "Station Doesn't Exist" ; else ; trip.start_station.name ; end%></p>
+  <p>End Station: <%= if trip.end_station.nil? ; "Station Doesn't Exist" ; else ; trip.end_station.name ; end %></p>
   <p>Bike ID: <%= trip.bike.bike_number%></p>
   <p>Subscription Type: <%=  trip.subscription_type.subscription_type%></p>
   <p>Zip Code: <%= trip.zip_code.zip_code unless trip.zip_code.nil?%></p>
