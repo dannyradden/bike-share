@@ -1,12 +1,12 @@
 <h1>Condition Date: <%= @condition.date.strftime("%B %d, %Y") %></h1>
 <br>
-<p>Maximum Temperature: <%= @condition.max_temp %></p>
-<p>Minimum Temperature: <%= @condition.min_temp %></p>
-<p>Mean Temperature: <%= @condition.mean_temp %></p>
-<p>Mean Humidity: <%= @condition.mean_humidity %></p>
-<p>Mean Visibility: <%= @condition.mean_visibility %></p>
-<p>Mean Wind Speed: <%= @condition.mean_wind_speed %></p>
-<p>Precipitation: <%= @condition.precipitation %></p>
+<p>Maximum Temperature: <%= @condition.max_temp %>°F</p>
+<p>Minimum Temperature: <%= @condition.min_temp %>°F</p>
+<p>Average Temperature: <%= @condition.mean_temp %>°F</p>
+<p>Average Humidity: <%= @condition.mean_humidity %>%</p>
+<p>Average Visibility: <%= @condition.mean_visibility %> miles</p>
+<p>Average Wind Speed: <%= @condition.mean_wind_speed %> mph</p>
+<p>Precipitation: <%= @condition.precipitation %> inches</p>
 
 <a href='/conditions/<%= @condition.id %>/edit'>edit</a>
 <form action="/conditions/<%= @condition.id %>" method="POST">

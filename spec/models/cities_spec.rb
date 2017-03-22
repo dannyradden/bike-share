@@ -14,6 +14,14 @@ RSpec.describe City do
       expect(city).to be_valid
     end
   end
+  
+  describe "relationships" do
+    it "returns Denver when station is created from a city" do
+      City.create(name: "Denver")
+      station = Station.create(name: "Turing", dock_count: 100, installation_date: "14/3/2017", city_id: 1)
+      expect(station.city.name).to eq("Denver") 
+    end
+  end
 
   describe "attributes" do
     it "should have name" do

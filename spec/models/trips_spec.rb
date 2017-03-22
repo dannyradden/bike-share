@@ -96,10 +96,17 @@ RSpec.describe Trip do
     end
   end
 
-    describe "bike relationships" do
-      it "should return the single bike for that trip" do
-        expect(@trip.bike).to eq (@bike)
-      end
+  describe "subscription_type relationship" do
+    it "should return the trip subscribtion type" do
+      expect(@trip.subscription_type).to eq(@subscription_type)
+      expect(@trip.subscription_type.subscription_type).to eq("Subscriber")
     end
+  end
+
+  describe "bike relationships" do
+    it "should return the single bike for that trip" do
+      expect(@trip.bike).to eq (@bike)
+    end
+  end
 
 end
