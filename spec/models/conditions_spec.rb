@@ -9,40 +9,40 @@ RSpec.describe Condition do
       conditions_for_date = Condition.new(max_temp: 30.0, min_temp: 20.0, mean_temp: 26.0, mean_humidity: 30.0, mean_visibility: 3.0, mean_wind_speed: 12.0, precipitation: 0.03)
       expect(conditions_for_date).to_not be_valid
     end
-    
+
     it "is invalid without a maximum temperature" do
       conditions_for_date = Condition.new(date: "14/3/2017", min_temp: 20.0, mean_temp: 26.0, mean_humidity: 30.0, mean_visibility: 3.0, mean_wind_speed: 12.0, precipitation: 0.03)
       expect(conditions_for_date).to_not be_valid
     end
-    
+
     it "is invalid without a minimum temperature" do
       conditions_for_date = Condition.new(date: "14/3/2017", max_temp: 30.0, mean_temp: 26.0, mean_humidity: 30.0, mean_visibility: 3.0, mean_wind_speed: 12.0, precipitation: 0.03)
       expect(conditions_for_date).to_not be_valid
     end
-    
+
     it "is invalid without a mean temperature" do
       conditions_for_date = Condition.new(date: "14/3/2017", max_temp: 30.0, min_temp: 20.0, mean_humidity: 30.0, mean_visibility: 3.0, mean_wind_speed: 12.0, precipitation: 0.03)
       expect(conditions_for_date).to_not be_valid
     end
-    
+
     it "is invalid without a mean humidity" do
       conditions_for_date = Condition.new(date: "14/3/2017", max_temp: 30.0, min_temp: 20.0, mean_temp: 26.0, mean_visibility: 3.0, mean_wind_speed: 12.0, precipitation: 0.03)
       expect(conditions_for_date).to_not be_valid
     end
-    
+
     it "is invalid without a mean visibility" do
       conditions_for_date = Condition.new(date: "14/3/2017", max_temp: 30.0, min_temp: 20.0, mean_temp: 26.0, mean_humidity: 30.0, mean_wind_speed: 12.0, precipitation: 0.03)
       expect(conditions_for_date).to_not be_valid
     end
-    
+
     it "is invalid without a mean wind speed" do
       conditions_for_date = Condition.new(date: "14/3/2017", max_temp: 30.0, min_temp: 20.0, mean_temp: 26.0, mean_humidity: 30.0, mean_visibility: 3.0, precipitation: 0.03)
       expect(conditions_for_date).to_not be_valid
     end
-    
-    it "is invalid without precipitation" do
+
+    it "is valid without precipitation" do
       conditions_for_date = Condition.new(date: "14/3/2017", max_temp: 30.0, min_temp: 20.0, mean_temp: 26.0, mean_humidity: 30.0, mean_visibility: 3.0, mean_wind_speed: 12.0)
-      expect(conditions_for_date).to_not be_valid
+      expect(conditions_for_date).to be_valid
     end
 
     it "should be valid with a date, max_temp, min_temp, mean_temp, mean_humidity, mean_visibility, mean_wind_speed, and precipitation" do
@@ -50,7 +50,7 @@ RSpec.describe Condition do
       expect(conditions_for_date).to be_valid
     end
   end
-  
+
   describe "relationships" do
     it "should return multiple trips" do
       conditions_for_date = Condition.create(date: "14/3/2017", max_temp: 30.0, min_temp: 20.0, mean_temp: 26.0, mean_humidity: 30.0, mean_visibility: 3.0, mean_wind_speed: 12.0, precipitation: 0.03)
@@ -61,7 +61,7 @@ RSpec.describe Condition do
       zip_code = ZipCode.create(zip_code: 80602)
       conditions_for_date.trips.create(duration: 100, start_date: "14/3/2017 14:14", start_station: station, end_date: "29/8/2013 20:14", end_station: station, bike: bike, subscription_type: subscription_type, zip_code: zip_code)
       conditions_for_date.trips.create(duration: 200, start_date: "14/3/2017 14:14", start_station: station, end_date: "29/8/2013 20:14", end_station: station, bike: bike, subscription_type: subscription_type, zip_code: zip_code)
-      
+
       expect(conditions_for_date.trips.count).to eq(2)
       expect(conditions_for_date.trips.first.duration).to eq(100)
     end
