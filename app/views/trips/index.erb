@@ -1,23 +1,29 @@
 <h1>All Trips</h1>
 
-<%= will_paginate @trips %>
+<h3>Trip data is sorted by start date!</h3>
 
-<% @trips.each do |trip| %>
-  <a href="/trips/<%=trip.id%>"><h4>Trip ID: <%= trip.id  %></h4></a>
-  <p>Duration: <%= trip.duration %> minutes</p>
-  <p>Start Date: <%= trip.start_date.strftime("%A, %B %d, %Y @ %I:%M%P") %></p>
-  <p>End Date: <%= trip.end_date.strftime("%A, %B %d, %Y @ %I:%M%P") %></p>
-  <p>Start Station: <%= if trip.start_station.nil? ; "Station Doesn't Exist" ; else ; trip.start_station.name ; end%></p>
-  <p>End Station: <%= if trip.end_station.nil? ; "Station Doesn't Exist" ; else ; trip.end_station.name ; end %></p>
-  <p>Bike ID: <%= trip.bike.bike_number%></p>
-  <p>Subscription Type: <%=  trip.subscription_type.subscription_type%></p>
-  <p>Zip Code: <%= trip.zip_code.zip_code unless trip.zip_code.nil?%></p>
-  <br>
-  <a class="btn btn-primary" href='/trips/<%= trip.id %>/edit'>edit</a>
-  <form action="/trips/<%= trip.id %>" method="POST">
-    <input type="hidden" name="_method" value="DELETE">
-    <input class="btn btn-danger" type="submit" value="Delete Trip">
-  </form>
-<% end %>
+<%= will_paginate @trips, renderer: BootstrapPagination::Sinatra %>
 
-<%= will_paginate @trips %>
+<div class="flex-container-stations">
+  <% @trips.each do |trip| %>
+    <div class="well station-box">
+      <a href="/trips/<%=trip.id%>"><h4>Trip ID: <%= trip.id  %></h4></a>
+      <p>Duration: <%= trip.duration %> minutes</p>
+      <p>Start Date: <%= trip.start_date.strftime("%A, %B %d, %Y @ %I:%M%P") %></p>
+      <p>End Date: <%= trip.end_date.strftime("%A, %B %d, %Y @ %I:%M%P") %></p>
+      <p>Start Station: <%= if trip.start_station.nil? ; "Station Doesn't Exist" ; else ; trip.start_station.name ; end%></p>
+      <p>End Station: <%= if trip.end_station.nil? ; "Station Doesn't Exist" ; else ; trip.end_station.name ; end %></p>
+      <p>Bike ID: <%= trip.bike.bike_number%></p>
+      <p>Subscription Type: <%=  trip.subscription_type.subscription_type%></p>
+      <p>Zip Code: <%= trip.zip_code.zip_code unless trip.zip_code.nil?%></p>
+      <br>
+      <form action="/trips/<%= trip.id %>" method="POST">
+        <a class="btn btn-primary" href='/trips/<%= trip.id %>/edit'>Edit</a>
+        <input type="hidden" name="_method" value="DELETE">
+        <input class="btn btn-danger" type="submit" value="Delete Trip">
+      </form>
+    </div>
+  <% end %>
+</div>
+
+  <%= will_paginate @trips, renderer: BootstrapPagination::Sinatra %>

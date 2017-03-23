@@ -106,7 +106,7 @@
           <tr>
             <td> <%= @trips.month_library[month+1] %> </td>
             <% @trips.years.each do |year| %>
-              <td> <%= @trips.year_month_total(year, month) %> </td>
+              <td> <%= @trips.year_month_total(year, month+1) %> </td>
             <% end %>
           </tr>
         <% end %>

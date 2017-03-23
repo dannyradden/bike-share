@@ -1,0 +1,84 @@
+body{
+  background-color: #a1c09a;
+  font-family: 'Lato', sans-serif;
+}
+
+.flex-container{
+  display: flex;
+}
+
+.flex-container-stations{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.header-wrapper{
+  flex-grow: 1;
+  align-content: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.bike-header{
+  text-align: center;
+}
+
+.bike-home-image{
+  min-width: 65%
+}
+
+.content-wrapper{
+  justify-content: center;
+  align-content: center;
+}
+
+.bike-content{
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+h1{
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.navbar-brand{
+  font-size: 35px;
+}
+
+.nav{
+  font-size: 20px;
+}
+
+.dropdown-font{
+  font-size: 20px;
+}
+
+.btn-primary{
+  background-color: #9aa8c0;
+  border-color: #848fad;
+  color: black;
+  font-weight: 800;
+}
+
+.btn-danger{
+  background-color: #c09aa1;
+  border-color: #b38e93;
+  color: black;
+  font-weight: 800;
+}
+
+.station-box{
+  width: 22%;
+}
+
+.show-box{
+  width: 22%;
+  text-align: center;
+}
+
+.show-box>h2{
+  color: #848fad;
+}

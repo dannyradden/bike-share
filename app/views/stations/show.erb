@@ -1,27 +1,45 @@
 <h1>Station Name: <%= @station.name %></h1>
-<br>
-<p>City: <%= @station.city.name %></p>
-<p>Dock Count: <%= @station.dock_count %></p>
-<p>Installation Date: <%= @station.installation_date.strftime("%B %d, %Y")%></p>
-<br>
-<h3>Station Stats</h3>
-<h5>Number of rides started at this station.</h5>
-<p><%= @station.number_of_rides_started %></p>
-<h5>Number of rides ended at this station.</h5>
-<p><%= @station.number_of_rides_ended %></p>
-<h5>Most frequent destination station (for rides that began at this station).</h5>
-<p><%= @station.most_frequent_destination %></p>
-<h5>Most freuqnet origination station (for rides that ended at this station).</h5>
-<p><%= @station.most_frequent_origin %></p>
-<h5>Date with the highest number of trips started at this station.</h5>
-<p><%= @station.busiest_days %></p>
-<h5>Most frequent zip code for users starting trips at this station.</h5>
-<p><%= @station.most_frequent_zip_codes %></p>
-<h5>Bike ID most frequently starting a trip at this station.</h5>
-<p><%= @station.most_frequent_bike %></p>
 
-<a href='/stations/<%= @station.id %>/edit'>edit</a>
 <form action="/stations/<%= @station.id %>" method="POST">
+  <a class="btn btn-primary" href='/stations/<%= @station.id %>/edit'>edit</a>
   <input type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="Delete Station">
+  <input class="btn btn-danger" type="submit" value="Delete Station">
 </form>
+
+<div class="well">
+  <h3>Station Information</h3>
+  <p>City: <%= @station.city.name %></p>
+  <p>Dock Count: <%= @station.dock_count %></p>
+  <p>Installation Date: <%= @station.installation_date.strftime("%B %d, %Y")%></p>
+</div>
+
+<div class="flex-container-stations">
+  <div class="well show-box">
+    <h3>Number of rides started at this station:</h3>
+    <h2><%= @station.number_of_rides_started %></h2>
+  </div>
+  <div class="well show-box">
+    <h3>Number of rides ended at this station.</h3>
+    <h2><%= @station.number_of_rides_ended %></h2>
+  </div>
+  <div class="well show-box">
+    <h3>Most frequent destination station (for rides that began at this station).</h3>
+    <h2><%= @station.most_frequent_destination %></h2>
+  </div>
+  <div class="well show-box">
+    <h3>Most freuqnet origination station (for rides that ended at this station).</h3>
+    <h2><%= @station.most_frequent_origin %></h2>
+  </div>
+  <div class="well show-box">
+    <h3>Date with the highest number of trips started at this station.</h3>
+    <h2><%= @station.busiest_days %></h2>
+  </div>
+  <div class="well show-box">
+    <h3>Most frequent zip code for users starting trips at this station.</h3>
+    <h2><%= @station.most_frequent_zip_codes %></h2>
+  </div>
+  <div class="well show-box">
+    <h3>Bike ID most frequently starting a trip at this station.</h3>
+    <h2><%= @station.most_frequent_bike %></h2>
+  </div>
+</div>
