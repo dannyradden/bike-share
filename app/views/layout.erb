@@ -7,6 +7,73 @@
     <link rel="stylesheet" href="/css/custom.css">
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
     <link rel="icon" href="/assets/home_bike.jpg">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawMonthBreakdownRidesChart);
+
+      function drawMonthBreakdownRidesChart() {
+      var data = google.visualization.arrayToDataTable([
+          ['Month', 'Rides', { role: "style" }],
+          ["January", 263, "#a93226"],
+          ["February", 204, "#ca6f1e"],
+          ["March", 255, "#f1c40f"],
+          ["April", 271, "#27ae60"],
+          ["May", 293, "#1abc9c"],
+          ["June", 308, "#2980b9"],
+          ["July", 321, "#8e44ad"],
+          ["August", 321, "#a93226"],
+          ["September", 325, "#ca6f1e"],
+          ["October", 348, "#f1c40f"],
+          ["November", 253, "#27ae60"],
+          ["December", 206, "#1abc9c"]
+        ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "Number of Rides per Month for 2013",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("month_by_month"));
+      chart.draw(view, options);
+    }
+
+    </script>
+    <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawAverageRidesPerWeatherChart);
+      google.charts.setOnLoadCallback(drawMonthBreakdownRidesChart);
+
+      function drawAverageRidesPerWeatherChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Weather Type', 'Average Rides', { role: "style" }],
+          ["High Temperature 90-99°F", 8, "#a93226"],
+          ["Precipitation 0.5-1.0 inches", 5, "#ca6f1e"],
+          ["Visibility 4-6 miles", 9, "#f1c40f"],
+          ["Wind Speed 20-23 mph", 9, "#8e44ad"]
+        ]);
+
+        var options = {
+          title: 'Average Rides Based on Extreme Weather',
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+
+    </script> -->
   </head>
   <body>
     <nav class="navbar navbar-inverse">

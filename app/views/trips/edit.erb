@@ -1,36 +1,52 @@
-<form action="/trips/<%= @trip.id %>" method="post">
+<h1>Edit Trip</h1>
+
+<form class="well" action="/trips/<%= @trip.id %>" method="post">
   <input type="hidden" name="_method" value="PUT" />
-  Start Date<br>
-  <input type='datetime-local'  name='trip[start_date]' value=<%=@trip.start_date.strftime("%Y-%m-%dT%H:%M")%> ><br>
-  Start Station Name<br>
-  <select name='trip[start_station]'>
-    <% @stations.each do |station| %>
-      <option value=<%= station.id %> <%= 'selected="selected"' if station.name == @trip.start_station.name %>>
-        <%= station.name %>
-      </option>
-    <% end %>
-  </select><br>
-  End Date<br>
-  <input type='datetime-local'  name='trip[end_date]' value=<%=@trip.end_date.strftime("%Y-%m-%dT%H:%M")%> ><br>
-  End Station Name<br>
-  <select name='trip[end_station]'>
-    <% @stations.each do |station| %>
+  <div class="form-group">
+    <label>Start Date</label>
+    <input class="form-control" type='datetime-local'  name='trip[start_date]' value=<%=@trip.start_date.strftime("%Y-%m-%dT%H:%M")%>>
+  </div>
+  <div class="form-group">
+    <label>Start Station Name</label>
+    <select class="form-control" name='trip[start_station]'>
+      <% @stations.each do |station| %>
+        <option value=<%= station.id %> <%= 'selected="selected"' if station.name == @trip.start_station.name %>>
+          <%= station.name %>
+        </option>
+      <% end %>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>End Date</label>
+    <input class="form-control" type='datetime-local'  name='trip[end_date]' value=<%=@trip.end_date.strftime("%Y-%m-%dT%H:%M")%>>
+  </div>
+  <div class="form-group">
+    <label>End Station Name</label>
+    <select class="form-control" name='trip[end_station]'>
+      <% @stations.each do |station| %>
       <option value=<%= station.id %> <%= 'selected="selected"' if station.name == @trip.end_station.name %>>
         <%= station.name %>
       </option>
-    <% end %>
-  </select><br>
-  Bike Number<br>
-  <input type='number'  name='trip[bike_number]'value="<%= @trip.bike.bike_number %>"><br>
-  Subscription Type<br>
-  <select name='trip[subscription_type]'>
-    <% @subtypes.each do |subtype| %>
+      <% end %>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Bike Number</label>
+    <input type='number' class="form-control" name='trip[bike_number]'value="<%= @trip.bike.bike_number %>">
+  </div>
+  <div class="form-group">
+    <label>Subscription Type</label>
+    <select class="form-control" name='trip[subscription_type]'>
+      <% @subtypes.each do |subtype| %>
       <option value=<%= subtype.id %> <%= 'selected="selected"' if subtype.subscription_type == @trip.subscription_type.subscription_type %>>
         <%= subtype.subscription_type %>
       </option>
-    <% end %>
-  </select><br>
-  Zip Code<br>
-  <input type='number'  name='trip[zip_code]'value="<%= @trip.zip_code.zip_code unless @trip.zip_code.nil?%>"><br>
-  <input type='submit' value='Submit'>
+      <% end %>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Zip Code</label>
+    <input class="form-control" type='number'  name='trip[zip_code]'value="<%= @trip.zip_code.zip_code unless @trip.zip_code.nil?%>"><br>
+  </div>
+  <input type='submit' class="btn btn-primary" value='Submit'>
 </form>

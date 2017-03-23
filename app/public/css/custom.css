@@ -4,6 +4,10 @@ body{
   font-size: 16px;
 }
 
+label{
+  font-size: 20px;
+}
+
 .flex-container{
   display: flex;
 }

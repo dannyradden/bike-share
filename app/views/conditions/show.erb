@@ -9,9 +9,9 @@
     <p>Average Visibility: <%= @condition.mean_visibility %> miles</p>
     <p>Average Wind Speed: <%= @condition.mean_wind_speed %> mph</p>
     <p>Precipitation: <%= @condition.precipitation %> inches</p>
-  </div>  
+  </div>
   <form action="/conditions/<%= @condition.id %>" method="POST">
-    <a class="btn btn-primary" href='/conditions/<%= @condition.id %>/edit'>edit</a>
+    <a class="btn btn-primary" href='/conditions/<%= @condition.id %>/edit'>Edit</a>
     <input type="hidden" name="_method" value="DELETE">
     <input class="btn btn-danger" type="submit" value="Delete conditions for this day">
   </form>
