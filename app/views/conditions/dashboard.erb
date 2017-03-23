@@ -1,8 +1,27 @@
 <h1>Welcome to the Weather Conditions Dashboard!!!</h1>
 
-<!-- <div class="total_stations">
+<div class="month_by_month_breakdown">
   <p>
-    Total count of stations: <%= @stations.total_stations %>
+    <h4>Trips Taken Based on Max Temperature</h4>
+    <table class="table">
+      <tr>
+        <th>Max Temperature Range</th>
+        <th>Average Trips Taken</th>
+        <th>Most Trips Taken</th>
+        <th>Least Trips Taken</th>
+      <tr>
+        <th>Stats</th>
+          <% @trips.years.each do |year| %>
+            <th><%="#{year}"%></th>
+          <% end %>
+      </tr>
+          <tr>
+            <td> <%= @trips.month_library[month+1] %> </td>
+            <% @trips.years.each do |year| %>
+              <td> <%= @trips.year_month_total(year, month) %> </td>
+            <% end %>
+          </tr>
+        <% end %>
+    </table>
   </p>
-</div> -->
-
+</div>
