@@ -73,3 +73,12 @@ h1{
 .station-box{
   width: 22%;
 }
+
+.show-box{
+  width: 22%;
+  text-align: center;
+}
+
+.show-box>h2{
+  color: #848fad;
+}
