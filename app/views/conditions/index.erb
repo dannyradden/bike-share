@@ -17,7 +17,7 @@
     <p>Precipitation: <%= condition.precipitation %> inches</p>
     <br>
     <form action="/conditions/<%= condition.id %>" method="POST">
-      <a class="btn btn-primary" href='/conditions/<%= condition.id %>/edit'>edit</a>
+      <a class="btn btn-primary" href='/conditions/<%= condition.id %>/edit'>Edit</a>
       <input type="hidden" name="_method" value="DELETE">
       <input class="btn btn-danger" type="submit" value="Delete Condition">
     </form>

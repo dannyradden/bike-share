@@ -8,7 +8,7 @@
     <p>Installation Date: <%= @station.installation_date.strftime("%B %d, %Y")%></p>
   </div>
   <form action="/stations/<%= @station.id %>" method="POST">
-    <a class="btn btn-primary" href='/stations/<%= @station.id %>/edit'>edit</a>
+    <a class="btn btn-primary" href='/stations/<%= @station.id %>/edit'>Edit</a>
     <input type="hidden" name="_method" value="DELETE">
     <input class="btn btn-danger" type="submit" value="Delete Station">
   </form>
@@ -21,27 +21,27 @@
     <h2><%= @station.number_of_rides_started %></h2>
   </div>
   <div class="well show-box">
-    <h3>Number of rides ended at this station.</h3>
+    <h3>Number of rides ended at this station:</h3>
     <h2><%= @station.number_of_rides_ended %></h2>
   </div>
   <div class="well show-box">
-    <h3>Most frequent destination station (for rides that began at this station).</h3>
+    <h3>Most frequent destination station (for rides that began at this station):</h3>
     <h2><%= @station.most_frequent_destination %></h2>
   </div>
   <div class="well show-box">
-    <h3>Most freuqnet origination station (for rides that ended at this station).</h3>
+    <h3>Most frequent origination station (for rides that ended at this station):</h3>
     <h2><%= @station.most_frequent_origin %></h2>
   </div>
   <div class="well show-box">
-    <h3>Date with the highest number of trips started at this station.</h3>
+    <h3>Date with the highest number of trips started at this station:</h3>
     <h2><%= @station.busiest_days %></h2>
   </div>
   <div class="well show-box">
-    <h3>Most frequent zip code for users starting trips at this station.</h3>
+    <h3>Most frequent zip code for users starting trips at this station:</h3>
     <h2><%= @station.most_frequent_zip_codes %></h2>
   </div>
   <div class="well show-box">
-    <h3>Bike ID most frequently starting a trip at this station.</h3>
+    <h3>Bike ID most frequently starting a trip at this station:</h3>
     <h2><%= @station.most_frequent_bike %></h2>
   </div>
   <div class="well show-box hide-me">

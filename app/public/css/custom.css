@@ -98,3 +98,7 @@ h1{
   background-color: #a1c09a;
   border-color: #a1c09a;
 }
+
+.half-box{
+  max-width: 35%
+}
