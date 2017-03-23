@@ -10,6 +10,8 @@ class Condition < ActiveRecord::Base
   validates :mean_wind_speed, presence: true
   validates :precipitation, presence: true
 
+  default_scope { order(date: :desc) }
+
     def self.create_condition(params)
       Condition.create(
         date: params[:condition][:date],

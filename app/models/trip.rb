@@ -15,6 +15,9 @@ class Trip < ActiveRecord::Base
  validates :bike_id, presence: true
  validates :subscription_type_id, presence: true
 
+ default_scope { order(start_date: :desc) }
+
+
  def self.create_trip(params)
    Trip.create!(
      duration:             (Time.parse(params[:trip][:end_date]) - Time.parse(params[:trip][:start_date])).to_i,
@@ -99,11 +102,11 @@ class Trip < ActiveRecord::Base
       12 => "December"
     }
   end
-  
+
   def self.weather_on_day_with_highest_rides
     Condition.find_by(date: Trip.date_with_most_trips)
   end
-  
+
   def self.weather_on_day_with_least_rides
     Condition.find_by(date: Trip.date_with_least_trips)
   end

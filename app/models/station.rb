@@ -12,6 +12,8 @@ class Station < ActiveRecord::Base
   validates :city_id, presence: true
   validates :installation_date, presence: true
 
+  default_scope { order(:name) }
+
   def self.total_stations
     Station.count
   end

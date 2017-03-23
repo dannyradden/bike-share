@@ -8,7 +8,7 @@ class BikeShareApp < Sinatra::Base
   end
 
   get '/stations' do
-    @stations = Station.all.order(:name).paginate(page: params[:page], per_page: 28)
+    @stations = Station.all.paginate(page: params[:page], per_page: 28)
     erb :"stations/index"
   end
 
@@ -47,7 +47,7 @@ class BikeShareApp < Sinatra::Base
   end
 
   get '/trips' do
-    @trips = Trip.all.order(start_date: :desc).paginate(page: params[:page], per_page: 28)
+    @trips = Trip.all.paginate(page: params[:page], per_page: 28)
     erb :'trips/index'
   end
 
@@ -93,7 +93,7 @@ class BikeShareApp < Sinatra::Base
   end
 
   get '/conditions' do
-    @conditions = Condition.all.order(date: :desc).paginate(page: params[:page], per_page: 28)
+    @conditions = Condition.all.paginate(page: params[:page], per_page: 28)
     erb :'conditions/index'
   end
 

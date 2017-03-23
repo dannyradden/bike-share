@@ -67,7 +67,7 @@ CSV.foreach "db/csv/weather.csv", headers: true, header_converters: :symbol do |
   end
 end
 
-CSV.foreach "db/fixture_csv/trip_fixture.csv", headers: true, header_converters: :symbol do |row|
+CSV.foreach "db/csv/trip.csv", headers: true, header_converters: :symbol do |row|
   @count += 1
   Trip.create(
     duration:             row[:duration],
