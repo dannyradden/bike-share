@@ -61,7 +61,7 @@ CSV.foreach "db/csv/weather.csv", headers: true, header_converters: :symbol do |
       mean_humidity:      row[:mean_humidity],
       mean_visibility:    row[:mean_visibility_miles],
       mean_wind_speed:    row[:mean_wind_speed_mph],
-      precipitation:      (row[:precipitation_inches] unless row[:precipitation_inches] == 'T')
+      precipitation:      row[:precipitation_inches]
     )
     p "Creating Condition on date #{clean_datetime(row[:date])} "
   end
