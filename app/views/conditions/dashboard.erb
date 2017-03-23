@@ -5,23 +5,180 @@
     <h4>Trips Taken Based on Max Temperature</h4>
     <table class="table">
       <tr>
-        <th>Max Temperature Range</th>
+        <th>Max Temperature Range(&deg;(176) F)</th>
         <th>Average Trips Taken</th>
         <th>Most Trips Taken</th>
         <th>Least Trips Taken</th>
-      <tr>
-        <th>Stats</th>
-          <% @trips.years.each do |year| %>
-            <th><%="#{year}"%></th>
-          <% end %>
       </tr>
-          <tr>
-            <td> <%= @trips.month_library[month+1] %> </td>
-            <% @trips.years.each do |year| %>
-              <td> <%= @trips.year_month_total(year, month) %> </td>
-            <% end %>
-          </tr>
-        <% end %>
+      <tr>
+        <th>40-49</th>
+          <td><%= Condition.average_number_of_trips_for_condition(:max_temp, 40, 49) %></td>
+          <td><%= Condition.most_trips_in_a_day_for_condition(:max_temp, 40, 49) %></td>
+          <td><%= Condition.least_trips_in_a_day_for_condition(:max_temp, 40, 49) %></td>
+      </tr>
+      <tr>
+        <th>50-59</th>
+          <td><%= Condition.average_number_of_trips_for_condition(:max_temp, 50, 59) %></td>
+          <td><%= Condition.most_trips_in_a_day_for_condition(:max_temp, 50, 59) %></td>
+          <td><%= Condition.least_trips_in_a_day_for_condition(:max_temp, 50, 59) %></td>
+      </tr>
+      <tr>
+        <th>60-69</th>
+          <td><%= Condition.average_number_of_trips_for_condition(:max_temp, 60, 69) %></td>
+          <td><%= Condition.most_trips_in_a_day_for_condition(:max_temp, 60, 69) %></td>
+          <td><%= Condition.least_trips_in_a_day_for_condition(:max_temp, 60, 69) %></td>
+      </tr>
+      <tr>
+        <th>70-79</th>
+          <td><%= Condition.average_number_of_trips_for_condition(:max_temp, 70, 79) %></td>
+          <td><%= Condition.most_trips_in_a_day_for_condition(:max_temp, 70, 79) %></td>
+          <td><%= Condition.least_trips_in_a_day_for_condition(:max_temp, 70, 79) %></td>
+      </tr>
+      <tr>
+        <th>80-89</th>
+          <td><%= Condition.average_number_of_trips_for_condition(:max_temp, 80, 89) %></td>
+          <td><%= Condition.most_trips_in_a_day_for_condition(:max_temp, 80, 89) %></td>
+          <td><%= Condition.least_trips_in_a_day_for_condition(:max_temp, 80, 89) %></td>
+      </tr>
+      <tr>
+        <th>90-99</th>
+          <td><%= Condition.average_number_of_trips_for_condition(:max_temp, 90, 99) %></td>
+          <td><%= Condition.most_trips_in_a_day_for_condition(:max_temp, 90, 99) %></td>
+          <td><%= Condition.least_trips_in_a_day_for_condition(:max_temp, 90, 99) %></td>
+      </tr>
+    </table>
+  </p>
+
+  <p>
+    <h4>Trips Taken Based on Precipitation</h4>
+    <table class="table">
+      <tr>
+        <th>Precipitation Range(inches)</th>
+        <th>Average Trips Taken</th>
+        <th>Most Trips Taken</th>
+        <th>Least Trips Taken</th>
+      </tr>
+      <tr>
+        <th>0-0.49</th>
+          <td><%= Condition.average_number_of_trips_for_condition(:precipitation, 0, 0.49) %></td>
+          <td><%= Condition.most_trips_in_a_day_for_condition(:precipitation, 0, 0.49) %></td>
+          <td><%= Condition.least_trips_in_a_day_for_condition(:precipitation, 0, 0.49) %></td>
+      </tr>
+      <tr>
+        <th>0.50-0.99</th>
+          <td><%= Condition.average_number_of_trips_for_condition(:precipitation, 0.50, 0.99) %></td>
+          <td><%= Condition.most_trips_in_a_day_for_condition(:precipitation, 0.50, 0.99) %></td>
+          <td><%= Condition.least_trips_in_a_day_for_condition(:precipitation, 0.50, 0.99) %></td>
+      </tr>
+      <tr>
+        <th>1-1.49</th>
+          <td><%= Condition.average_number_of_trips_for_condition(:precipitation, 1.0, 1.49) %></td>
+          <td><%= Condition.most_trips_in_a_day_for_condition(:precipitation, 1.0, 1.49) %></td>
+          <td><%= Condition.least_trips_in_a_day_for_condition(:precipitation, 1.0, 1.49) %></td>
+      </tr>
+      <tr>
+        <th>1.5-1.99</th>
+          <td><%= Condition.average_number_of_trips_for_condition(:precipitation, 1.5, 1.99) %></td>
+          <td><%= Condition.most_trips_in_a_day_for_condition(:precipitation, 1.5, 1.99) %></td>
+          <td><%= Condition.least_trips_in_a_day_for_condition(:precipitation, 1.5, 1.99) %></td>
+      </tr>
+      <tr>
+        <th>2-2.49</th>
+          <td><%= Condition.average_number_of_trips_for_condition(:precipitation, 2.0, 2.49) %></td>
+          <td><%= Condition.most_trips_in_a_day_for_condition(:precipitation, 2.0, 2.49) %></td>
+          <td><%= Condition.least_trips_in_a_day_for_condition(:precipitation, 2.0, 2.49) %></td>
+      </tr>
+      <tr>
+        <th>2.5-2.99</th>
+          <td><%= Condition.average_number_of_trips_for_condition(:precipitation, 2.5, 2.99) %></td>
+          <td><%= Condition.most_trips_in_a_day_for_condition(:precipitation, 2.5, 2.99) %></td>
+          <td><%= Condition.least_trips_in_a_day_for_condition(:precipitation, 2.5, 2.99) %></td>
+      </tr>
+      <tr>
+        <th>3-3.49</th>
+          <td><%= Condition.average_number_of_trips_for_condition(:precipitation, 3.0, 3.49) %></td>
+          <td><%= Condition.most_trips_in_a_day_for_condition(:precipitation, 3.0, 3.49) %></td>
+          <td><%= Condition.least_trips_in_a_day_for_condition(:precipitation, 3.0, 3.49) %></td>
+      </tr>
+    </table>
+  </p>
+
+  <p>
+    <h4>Trips Taken Based on Average Wind Speed</h4>
+    <table class="table">
+      <tr>
+        <th>Wind Speed Range(mph)</th>
+        <th>Average Trips Taken</th>
+        <th>Most Trips Taken</th>
+        <th>Least Trips Taken</th>
+      </tr>
+      <tr>
+        <th>0-3</th>
+          <td><%= Condition.average_number_of_trips_for_condition(:mean_wind_speed, 0, 3) %></td>
+          <td><%= Condition.most_trips_in_a_day_for_condition(:mean_wind_speed, 0, 3) %></td>
+          <td><%= Condition.least_trips_in_a_day_for_condition(:mean_wind_speed, 0, 3) %></td>
+      </tr>
+      <tr>
+        <th>4-7</th>
+          <td><%= Condition.average_number_of_trips_for_condition(:mean_wind_speed, 4, 7) %></td>
+          <td><%= Condition.most_trips_in_a_day_for_condition(:mean_wind_speed, 4, 7) %></td>
+          <td><%= Condition.least_trips_in_a_day_for_condition(:mean_wind_speed, 4, 7) %></td>
+      </tr>
+      <tr>
+        <th>8-11</th>
+          <td><%= Condition.average_number_of_trips_for_condition(:mean_wind_speed, 8, 11) %></td>
+          <td><%= Condition.most_trips_in_a_day_for_condition(:mean_wind_speed, 8, 11) %></td>
+          <td><%= Condition.least_trips_in_a_day_for_condition(:mean_wind_speed, 8, 11) %></td>
+      </tr>
+      <tr>
+        <th>12-15</th>
+          <td><%= Condition.average_number_of_trips_for_condition(:mean_wind_speed, 12, 15) %></td>
+          <td><%= Condition.most_trips_in_a_day_for_condition(:mean_wind_speed, 12, 15) %></td>
+          <td><%= Condition.least_trips_in_a_day_for_condition(:mean_wind_speed, 12, 15) %></td>
+      </tr>
+      <tr>
+        <th>16-19</th>
+          <td><%= Condition.average_number_of_trips_for_condition(:mean_wind_speed, 16, 19) %></td>
+          <td><%= Condition.most_trips_in_a_day_for_condition(:mean_wind_speed, 16, 19) %></td>
+          <td><%= Condition.least_trips_in_a_day_for_condition(:mean_wind_speed, 16, 19) %></td>
+      </tr>
+      <tr>
+        <th>20-23</th>
+          <td><%= Condition.average_number_of_trips_for_condition(:mean_wind_speed, 20, 23) %></td>
+          <td><%= Condition.most_trips_in_a_day_for_condition(:mean_wind_speed, 20, 23) %></td>
+          <td><%= Condition.least_trips_in_a_day_for_condition(:mean_wind_speed, 20, 23) %></td>
+      </tr>
+    </table>
+  </p>
+
+  <p>
+    <h4>Trips Taken Based on Average Visibility</h4>
+    <table class="table">
+      <tr>
+        <th>Visibility Range(miles)</th>
+        <th>Average Trips Taken</th>
+        <th>Most Trips Taken</th>
+        <th>Least Trips Taken</th>
+      </tr>
+      <tr>
+        <th>4-6</th>
+          <td><%= Condition.average_number_of_trips_for_condition(:mean_visibility, 4, 5) %></td>
+          <td><%= Condition.most_trips_in_a_day_for_condition(:mean_visibility, 4, 5) %></td>
+          <td><%= Condition.least_trips_in_a_day_for_condition(:mean_visibility, 4, 5) %></td>
+      </tr>
+      <tr>
+        <th>6-8</th>
+          <td><%= Condition.average_number_of_trips_for_condition(:mean_visibility, 6, 7) %></td>
+          <td><%= Condition.most_trips_in_a_day_for_condition(:mean_visibility, 6, 7) %></td>
+          <td><%= Condition.least_trips_in_a_day_for_condition(:mean_visibility, 6, 7) %></td>
+      </tr>
+      <tr>
+        <th>8-10</th>
+          <td><%= Condition.average_number_of_trips_for_condition(:mean_visibility, 8, 10) %></td>
+          <td><%= Condition.most_trips_in_a_day_for_condition(:mean_visibility, 8, 10) %></td>
+          <td><%= Condition.least_trips_in_a_day_for_condition(:mean_visibility, 8, 10) %></td>
+      </tr>
+      <tr>
     </table>
   </p>
 </div>

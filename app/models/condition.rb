@@ -69,7 +69,7 @@ class Condition < ActiveRecord::Base
     end
 
       def self.trip_count_for_each_day(condition, low, high)
-        Condition.condition_days(condition, low, high).map(&:trips.count)
+        Condition.condition_days(condition, low, high).map{|day| day.trips.count}
       end
 
     def self.least_trips_in_a_day_for_condition(condition, low, high)
