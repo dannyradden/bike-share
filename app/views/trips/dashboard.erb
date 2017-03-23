@@ -84,12 +84,23 @@
     <table class="table">
       <tr>
         <th>Month</th>
-        <%= @trips.top_table_row %>
+          <% @trips.years.each do |year| %>
+            <th><%="#{year}"%></th>
+          <% end %>
       </tr>
-      <%= @trips.month_rows[0] %>
+        <% 12.times do |month| %>
+          <tr>
+            <td> <%= @trips.month_library[month+1] %> </td>
+            <% @trips.years.each do |year| %>
+              <td> <%= @trips.year_month_total(year, month) %> </td>
+            <% end %>
+          </tr>
+        <% end %>
       <tr>
         <td>Grand Total</td>
-        <%= @trips.grand_total_rows %>
+        <% @trips.years.each do |year| %>
+          <td><%= @trips.year_sub_totals(year)%></td>
+        <% end %>
       </tr>
     </table>
   </p>
