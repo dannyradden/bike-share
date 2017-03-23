@@ -6,7 +6,6 @@ gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'awesome_print', require: 'ap'
 gem 'nyan-cat-formatter'
-gem 'rails_12factor', group: :production
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 
