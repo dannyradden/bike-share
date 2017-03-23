@@ -19,7 +19,7 @@
   </div>
   <div class="form-group">
     <label>End Station Name</label>
-    <select class="form-control" name='trip[start_station]'>
+    <select class="form-control" name='trip[end_station]'>
       <% @stations.each do |station| %>
         <option value=<%= station.id %>><%= station.name %></option>
       <% end %>

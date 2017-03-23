@@ -24,7 +24,7 @@ RSpec.describe "When a user visits '/conditions/:id' " do
   it "they can click edit button" do
     visit '/conditions/2'
 
-    click_on 'edit'
+    click_on 'Edit'
     expect(current_path).to eq '/conditions/2/edit'
   end
 
