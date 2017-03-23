@@ -1,17 +1,19 @@
 <h1>Station Name: <%= @station.name %></h1>
 
-<form action="/stations/<%= @station.id %>" method="POST">
-  <a class="btn btn-primary" href='/stations/<%= @station.id %>/edit'>edit</a>
-  <input type="hidden" name="_method" value="DELETE">
-  <input class="btn btn-danger" type="submit" value="Delete Station">
-</form>
-
-<div class="well">
-  <h3>Station Information</h3>
-  <p>City: <%= @station.city.name %></p>
-  <p>Dock Count: <%= @station.dock_count %></p>
-  <p>Installation Date: <%= @station.installation_date.strftime("%B %d, %Y")%></p>
+<div class="well flex-container-info">
+  <div class="">
+    <h3>Station Information</h3>
+    <p>City: <%= @station.city.name %></p>
+    <p>Dock Count: <%= @station.dock_count %></p>
+    <p>Installation Date: <%= @station.installation_date.strftime("%B %d, %Y")%></p>
+  </div>
+  <form action="/stations/<%= @station.id %>" method="POST">
+    <a class="btn btn-primary" href='/stations/<%= @station.id %>/edit'>edit</a>
+    <input type="hidden" name="_method" value="DELETE">
+    <input class="btn btn-danger" type="submit" value="Delete Station">
+  </form>
 </div>
+
 
 <div class="flex-container-stations">
   <div class="well show-box">
@@ -41,5 +43,7 @@
   <div class="well show-box">
     <h3>Bike ID most frequently starting a trip at this station.</h3>
     <h2><%= @station.most_frequent_bike %></h2>
+  </div>
+  <div class="well show-box hide-me">
   </div>
 </div>

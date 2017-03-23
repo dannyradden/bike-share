@@ -1,6 +1,7 @@
 body{
   background-color: #a1c09a;
   font-family: 'Lato', sans-serif;
+  font-size: 16px;
 }
 
 .flex-container{
@@ -11,6 +12,12 @@ body{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.flex-container-info{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
 }
 
 .header-wrapper{
@@ -81,4 +88,9 @@ h1{
 
 .show-box>h2{
   color: #848fad;
+}
+
+.hide-me{
+  background-color: #a1c09a;
+  border-color: #a1c09a;
 }
