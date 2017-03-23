@@ -29,14 +29,4 @@ RSpec.describe "When a user edits conditions" do
     expect(page).to have_content 'Average Wind Speed: 12'
     expect(page).to have_content 'Precipitation: 0.03'
   end
-
-  it "updating existing condition with a new date automatically updates any existing trips" do
-    expect(@trip.condition).to eq(nil)
-
-    visit '/conditions/1/edit'
-    fill_in 'condition[date]', with: Date.parse("2017-3-14")
-    click_on 'Submit'
-
-    expect(@trip.condition.id).to eq(1)
-  end
 end

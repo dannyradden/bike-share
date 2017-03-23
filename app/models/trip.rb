@@ -44,15 +44,18 @@ class Trip < ActiveRecord::Base
  end
 
  def self.average_duration
-   Trip.average(:duration).to_i
+   average_duration = Trip.average(:duration).to_i
+   average_duration / 60
  end
 
  def self.longest_ride
-   Trip.maximum(:duration).to_i
+   longest_ride = Trip.maximum(:duration).to_i
+   longest_ride / 60
  end
 
  def self.shortest_ride
-   Trip.minimum(:duration).to_i
+   shortest_ride = Trip.minimum(:duration).to_i
+   shortest_ride / 60
  end
 
   def self.trip_quantities

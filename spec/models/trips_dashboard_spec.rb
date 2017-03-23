@@ -17,19 +17,19 @@ RSpec.describe Trip do
 
   describe ".average_duration" do
     it "returns average trip duration" do
-      expect( Trip.average_duration ).to eq(200)
+      expect( Trip.average_duration ).to eq(3)
     end
   end
 
   describe ".longest_ride" do
     it "returns longest duration of a ride" do
-      expect(Trip.longest_ride).to eq(300)
+      expect(Trip.longest_ride).to eq(5)
     end
   end
 
   describe ".shortest_ride" do
     it "returns shortest duration of a ride" do
-      expect(Trip.shortest_ride).to eq(100)
+      expect(Trip.shortest_ride).to eq(1)
     end
   end
 
