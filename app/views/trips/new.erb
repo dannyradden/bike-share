@@ -3,11 +3,11 @@
 <form class="well" action="/trips" method="post">
   <div class="form-group">
     <label>Start Date</label>
-    <input type='datetime-local'  name='trip[start_date]' >
+    <input class="form-control" type='datetime-local'  name='trip[start_date]' >
   </div>
   <div class="form-group">
     <label>Start Station Name</label>
-    <select name='trip[start_station]'>
+    <select class="form-control" name='trip[start_station]'>
       <% @stations.each do |station| %>
         <option value=<%= station.id %>><%= station.name %></option>
       <% end %>
@@ -15,11 +15,11 @@
   </div>
   <div class="form-group">
     <label>End Date</label>
-    <input type='datetime-local'  name='trip[end_date]'>
+    <input class="form-control" type='datetime-local'  name='trip[end_date]'>
   </div>
   <div class="form-group">
     <label>End Station Name</label>
-    <select name='trip[start_station]'>
+    <select class="form-control" name='trip[start_station]'>
       <% @stations.each do |station| %>
         <option value=<%= station.id %>><%= station.name %></option>
       <% end %>
@@ -27,11 +27,11 @@
   </div>
   <div class="form-group">
     <label>Bike Number</label>
-    <input type='number'  name='trip[bike_number]'>
+    <input class="form-control" type='number'  name='trip[bike_number]'>
   </div>
   <div class="form-group">
     <label>Subscription Type</label>
-    <select name='trip[subscription_type]'>
+    <select class="form-control" name='trip[subscription_type]'>
       <% @subtypes.each do |subtype| %>
         <option value=<%= subtype.id %>><%= subtype.subscription_type %></option>
       <% end %>
@@ -39,7 +39,7 @@
   </div>
   <div class="form-group">
     <label>Zip Code</label>
-    <input type='number'  name='trip[zip_code]'><br>
+    <input class="form-control" type='number'  name='trip[zip_code]'><br>
   </div>
   <input class="btn btn-primary" type='submit' value='Submit'>
 </form>
