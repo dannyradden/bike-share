@@ -57,12 +57,17 @@ h1{
 }
 
 .btn-primary{
-  background-color: #50441c;
-  border-color: #383013;
+  background-color: #9aa8c0;
+  border-color: #848fad;
+  color: black;
+  font-weight: 800;
 }
 
 .btn-danger{
-  background-color: #dc9229;
+  background-color: #c09aa1;
+  border-color: #b38e93;
+  color: black;
+  font-weight: 800;
 }
 
 .station-box{

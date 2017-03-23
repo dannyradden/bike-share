@@ -1,5 +1,7 @@
 <h1>All Bike Stations</h1>
 
+<h3>Station data is sorted by station name!</h3>
+
 <%= will_paginate @stations, renderer: BootstrapPagination::Sinatra %>
 
 <div class="flex-container-stations">
@@ -10,7 +12,7 @@
     <p>Dock Count: <%= station.dock_count %></p>
     <p>Installation Date: <%= station.installation_date.strftime("%B %d, %Y")%></p>
     <form action="/stations/<%= station.id %>" method="POST">
-      <a class="btn btn-primary" href='/stations/<%= station.id %>/edit'>edit</a>
+      <a class="btn btn-primary" href='/stations/<%= station.id %>/edit'>Edit</a>
       <input type="hidden" name="_method" value="DELETE">
       <input class="btn btn-danger" type="submit" value="Delete Station">
     </form>
