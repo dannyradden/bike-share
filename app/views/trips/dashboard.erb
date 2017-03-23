@@ -66,16 +66,30 @@
   </p>
 </div>
 
-<div class="date_with_most_trips">
-  <p>
-    Date with most trips: <%= @trips.date_with_most_trips.strftime("%A, %B %d, %Y") %>
-  </p>
+<div class="weather_date_with_most_trips">
+  <h4>Weather on <%= @trips.date_with_most_trips.strftime("%A, %B %d, %Y") %>: the date with the most trips</h3>
+  <ul>
+    <li>Maximum Temperature: <%= @trips.weather_on_day_with_highest_rides.max_temp %>°F</li>
+    <li>Minimum Temperature: <%= @trips.weather_on_day_with_highest_rides.min_temp %>°F</li>
+    <li>Average Temperature: <%= @trips.weather_on_day_with_highest_rides.mean_temp %>°F</li>
+    <li>Average Humidity: <%= @trips.weather_on_day_with_highest_rides.mean_humidity %>%</li>
+    <li>Average Visibility: <%= @trips.weather_on_day_with_highest_rides.mean_visibility %> miles</li>
+    <li>Average Wind Speed: <%= @trips.weather_on_day_with_highest_rides.mean_wind_speed %> mph</li>
+    <li>Precipitation: <%= @trips.weather_on_day_with_highest_rides.precipitation %> inches</li>
+  </ul>
 </div>
 
-<div class="date_with_least_trips">
-  <p>
-    Date with least trips: <%= @trips.date_with_least_trips.strftime("%A, %B %d, %Y") %>
-  </p>
+<div class="weather_date_with_least_trips">
+  <h4>Weather on <%= @trips.date_with_least_trips.strftime("%A, %B %d, %Y") %>: the date with the least trips</h3>
+  <ul>
+    <li>Maximum Temperature: <%= @trips.weather_on_day_with_least_rides.max_temp %>°F</li>
+    <li>Minimum Temperature: <%= @trips.weather_on_day_with_least_rides.min_temp %>°F</li>
+    <li>Average Temperature: <%= @trips.weather_on_day_with_least_rides.mean_temp %>°F</li>
+    <li>Average Humidity: <%= @trips.weather_on_day_with_least_rides.mean_humidity %>%</li>
+    <li>Average Visibility: <%= @trips.weather_on_day_with_least_rides.mean_visibility %> miles</li>
+    <li>Average Wind Speed: <%= @trips.weather_on_day_with_least_rides.mean_wind_speed %> mph</li>
+    <li>Precipitation: <%= @trips.weather_on_day_with_least_rides.precipitation %> inches</li>
+  </ul>
 </div>
 
 <div class="month_by_month_breakdown">

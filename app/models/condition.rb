@@ -25,7 +25,6 @@ class Condition < ActiveRecord::Base
     end
 
     def self.update_related_trip(condition_date)
-      require 'pry'; binding.pry
       search_date = Date.parse(condition_date)
       condition_trips = Trip.where(:start_date => search_date.beginning_of_day..search_date.end_of_day)
       condition_trips.update(condition: Condition.last)
