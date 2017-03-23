@@ -99,5 +99,13 @@ class Trip < ActiveRecord::Base
       12 => "December"
     }
   end
+  
+  def self.weather_on_day_with_highest_rides
+    Condition.find_by(date: Trip.date_with_most_trips)
+  end
+  
+  def self.weather_on_day_with_least_rides
+    Condition.find_by(date: Trip.date_with_least_trips)
+  end
 
 end
