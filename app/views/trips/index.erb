@@ -4,7 +4,7 @@
 
 <% @trips.each do |trip| %>
   <a href="/trips/<%=trip.id%>"><h4>Trip ID: <%= trip.id  %></h4></a>
-  <p>Duration: <%= trip.duration/60 %> minutes</p>
+  <p>Duration: <%= trip.duration %> minutes</p>
   <p>Start Date: <%= trip.start_date.strftime("%A, %B %d, %Y @ %I:%M%P") %></p>
   <p>End Date: <%= trip.end_date.strftime("%A, %B %d, %Y @ %I:%M%P") %></p>
   <p>Start Station: <%= if trip.start_station.nil? ; "Station Doesn't Exist" ; else ; trip.start_station.name ; end%></p>
