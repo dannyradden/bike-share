@@ -28,7 +28,7 @@ RSpec.describe "When a user visits '/station-dashboard' " do
     end
 
     within('div.stations_with_most_bikes') do
-      expect(page).to have_content("Station(s) where the most bikes are available: LoDo, Five Points")
+      expect(page).to have_content("Station(s) where the most bikes are available: Five Points, LoDo")
     end
 
     within('div.fewest_bikes') do

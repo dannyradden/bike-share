@@ -32,7 +32,7 @@ RSpec.describe Station do
       expect( Station.list_maker([@station1, @station2, @station3]) ).to eq("LoDo, Five Points, Capital Hill")
     end
     it "returns stations with most bikes availale" do
-      expect( Station.stations_with_most_bikes ).to eq("LoDo, Five Points")
+      expect( Station.stations_with_most_bikes ).to eq("Five Points, LoDo")
     end
   end
 
