@@ -1,49 +1,43 @@
 <h1>Welcome to the Station Dashboard!</h1>
 
-<div class="total_stations">
-  <p>
-    Total count of stations: <%= @stations.total_stations %>
-  </p>
-</div>
+<div class="flex-container-stations">
+  <div class="well show-box total_stations">
+    <h3>Total count of stations:</h3>
+    <h2><%= @stations.total_stations %></h2>
+  </div>
 
-<div class="average_bikes">
-  <p>
-    Average bikes available per station: <%= @stations.average_bikes %>
-  </p>
-</div>
+  <div class="well show-box average_bikes">
+    <h3>Average bikes available per station:</h3>
+    <h2><%= @stations.average_bikes %></h2>
+  </div>
 
-<div class="most_bikes">
-  <p>
-    Most bikes available at a station: <%= @stations.most_bikes %>
-  </p>
-</div>
+  <div class="well show-box most_bikes">
+    <h3>Most bikes available at a station:</h3>
+    <h2><%= @stations.most_bikes %></h2>
+  </div>
 
-<div class="stations_with_most_bikes">
-  <p>
-    Station(s) where the most bikes are available: <%= @stations.stations_with_most_bikes %>
-  </p>
-</div>
+  <div class="well show-box fewest_bikes">
+    <h3>Fewest bikes available at a station:</h3>
+    <h2><%= @stations.fewest_bikes %></h2>
+  </div>
 
-<div class="fewest_bikes">
-  <p>
-    Fewest bikes available at a station: <%= @stations.fewest_bikes %>
-  </p>
-</div>
+  <div class="well show-box stations_with_most_bikes">
+    <h3>Station(s) where the most bikes are available:</h3>
+    <h2><%= @stations.stations_with_most_bikes %></h2>
+  </div>
 
-<div class="stations_with_fewest_bikes">
-  <p>
-    Station(s) where the fewest bikes are available: <%= @stations.stations_with_fewest_bikes %>
-  </p>
-</div>
+  <div class="well show-box stations_with_fewest_bikes">
+    <h3>Station(s) where the fewest bikes are available:</h3>
+    <h2><%= @stations.stations_with_fewest_bikes %></h2>
+  </div>
 
-<div class="newest_stations">
-  <p>
-    Most recently installed station(s): <%= @stations.newest_stations %>
-  </p>
-</div>
+  <div class="well show-box newest_stations">
+    <h3>Most recently installed station(s):</h3>
+    <h2><%= @stations.newest_stations %></h2>
+  </div>
 
-<div class="oldest_stations">
-  <p>
-    Oldest station(s): <%= @stations.oldest_stations %>
-  </p>
+  <div class="well show-box oldest_stations">
+    <h3>Oldest station(s):</h3>
+    <h2><%= @stations.oldest_stations %></h2>
+  </div>
 </div>
